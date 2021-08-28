@@ -7,7 +7,7 @@ const AddCommentForm = () => {
     const [pronouns, setPronouns] = useState('');
     const[bio, setBio] = useState('');
 
-    // const addComment = async()=>
+    // const addPerson = async()=>
     // {
     //     const result = await fetch(`/api/articles/${articleName}/add-comment`, {
     //         method:'post',
@@ -33,7 +33,25 @@ const AddCommentForm = () => {
                 Last Name:
                 <input type = "text" value={lastName} onChange={(event)=>setLastName(event.target.value)} />
             </label>
+            <label>
+                Select Language
+                <select value={language} onChange={(event)=>setLanguage(event.target.value)} >
+                    <option selected value="english">English</option>
+                    <option value="french">French</option>
+                    <option value="italian">Italian</option>
+                    <option value="spanish">Spanish</option>
+                </select>
+            </label>
+            <label>
+                Select Pronouns
+                <select value={pronouns} onChange={(event)=>setPronouns(event.target.value)} >
+                    <option value="sheHer">She/Her</option>
+                    <option value="heHim">He/Him</option>
+                    <option value="theyThem">They/Them</option>
+                    <option value="other">Other</option>
+                </select>
 
+            </label>
             <label>
                 Bio: 
                 <textarea rows= "4" cols = "50" value={bio} onChange={(event)=>setBio(event.target.value)}/>
