@@ -36,7 +36,7 @@ const AddCommentForm = () => {
             <label>
                 Select Language
                 <select value={language} onChange={(event)=>setLanguage(event.target.value)} >
-                <option selected value="Arabic">Arabic</option>
+                    <option selected value="Arabic">Arabic</option>
                     <option value="Australian English">Australian English</option>
                     <option value="Brazilian Portuguese">Brazilian Portuguese</option>
                     <option value="British English">British English</option>
@@ -80,7 +80,27 @@ const AddCommentForm = () => {
                 Bio: 
                 <textarea rows= "4" cols = "50" value={bio} onChange={(event)=>setBio(event.target.value)}/>
             </label>
-            <button>Submit</button>
+            <button type="submit" value="Create User" 
+                onClick={async () => {
+                    const content = {
+                        "firstName": {firstName},
+                        "lastName": {lastName},
+                        "language": {language},
+                        "pronouns": {pronouns},
+                        "bio": {bio}
+                    };
+                    const response = await fetch("/createUser", {
+                        method: "POST",
+                        headers: {
+                            'Content-Type' : 'application/json'
+                            },
+                        body: content
+                    }
+                    )
+                }
+            }>
+                
+            </button>
             {/* <button onClick={()=> addComment()}>Submit</button> */}
 
         </div>
