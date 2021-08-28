@@ -13,7 +13,7 @@ const Form = () => {
     return(
         <div class = "box">
         <div id="form-box">
-            <h3>Input your Personal Information</h3>
+            <h3>Introduce yourself!</h3>
             <label class="content">
                 <input placeholder="First Name" type = "text" value={firstName} onChange={(event)=>setFirstName(event.target.value)} />
             </label>
@@ -54,7 +54,7 @@ const Form = () => {
                 </select>
             </label>
             <label class="content">
-                Select Pronouns:
+                <h4>Select Pronouns:</h4>
                 <select value={pronouns} onChange={(event)=>setPronouns(event.target.value)} >
                     <option value="sheHer">She/Her</option>
                     <option value="heHim">He/Him</option>

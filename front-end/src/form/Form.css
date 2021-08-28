@@ -3,8 +3,8 @@
   margin: 0;
   /* border: 1px solid red; */
   align-content: center;
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font-weight: lighter;
 }
 
 .box {
@@ -64,5 +64,6 @@ textarea {
   background-color: white;
 }
 
-.btn {
+#btn{
+  background-color: #c69bd4;
 }
