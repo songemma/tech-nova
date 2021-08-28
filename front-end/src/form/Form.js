@@ -10,22 +10,8 @@ const Form = () => {
     const [pronouns, setPronouns] = useState('');
     const[bio, setBio] = useState('');
 
-    // const addPerson = async()=>
-    // {
-    //     const result = await fetch(`/api/articles/${articleName}/add-comment`, {
-    //         method:'post',
-    //         body:JSON.stringify({username, text:commentText}), 
-    //         headers:{
-    //             'Content-Type': 'application/json',
-    //         }
-    //     })
-    //     const body= await result.json();
-    //     setArticleInfo(body);
-    //     setUsername('');
-    //     setCommentText('');
-    // }
-
     return(
+        <div class = "box">
         <div id="form-box">
             <h3>Input your Personal Information</h3>
             <label class="content">
@@ -35,7 +21,7 @@ const Form = () => {
                 <input placeholder="Last Name" type = "text" value={lastName} onChange={(event)=>setLastName(event.target.value)} />
             </label>
             <label class="content">
-                Select Language:
+                <h4>Select Language:</h4>
                 <select value={language} onChange={(event)=>setLanguage(event.target.value)} >
                 <option selected value="Arabic">Arabic</option>
                     <option value="Australian English">Australian English</option>
@@ -79,10 +65,12 @@ const Form = () => {
             <label class="content">
                 <textarea placeholder="A little about me!" rows= "4" cols = "50" value={bio} onChange={(event)=>setBio(event.target.value)}/>
             </label>
-            <button>Submit</button>
-            {/* <button onClick={()=> addComment()}>Submit</button> */}
-
+            <div class = "btn">
+            <button class = "content">Submit</button>
+            </div>
         </div>
+        </div>
+
     )
 
 }
