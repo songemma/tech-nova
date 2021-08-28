@@ -3,11 +3,11 @@ from flask import Flask, request, jsonify, send_from_directory
 from flask_restful import Api
 from flask_cors import CORS
 from api.api_handler import ApiHandler, CreateUser, GetUsers
-import csv
 
 app = Flask(__name__, static_url_path='', static_folder='front-end/public')
 CORS(app)
 api = Api(app)
+
 
 @app.route("/", defaults={'path':''})
 def serve(path):

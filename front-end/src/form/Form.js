@@ -69,10 +69,10 @@ const Form = () => {
                                 </div>
                                 <div class="form-group form-button">
                                     
-                                // whenever there's type="submit", need to use event.preventDefault()
-                                // avoid reloading the page
-                                <button type="submit" value="Create User" 
-                                    onClick={
+                                {/* whenever there's type="submit", need to use event.preventDefault()
+                                to avoid reloading the page */ }
+                                <input type="submit" name="signup" id="signup" class="form-submit" value="Submit"
+                                    onClick={ 
                                         // JavaScript starts
                                         async (event) => {
                                         event.preventDefault();
@@ -96,8 +96,7 @@ const Form = () => {
                                             .catch(error => console.error(error))
                                           }
                                         
-                                }>
-                                </button>
+                                }/>
 
                                 </div>
                             </form>

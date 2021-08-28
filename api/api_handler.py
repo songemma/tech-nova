@@ -3,13 +3,12 @@ import os
 import csv
 import json
 import boto3
-import subprocess
 from pathlib import Path
 from contextlib import closing
 from flask_restful import Resource, reqparse
 
-ACCESS_KEY = "AKIAQCO562PCE7DYWQXN"
-SECRET_KEY = "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"
+ACCESS_KEY = "AKIAQCO562PCDNEQM4HS"
+SECRET_KEY = "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"
 
 cur_dir_path = Path(__file__).resolve().parent
 
