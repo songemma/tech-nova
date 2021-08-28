@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
 
-const AddCommentForm = () => {
+import './Form.css';
+
+
+const Form = () => {
     const[firstName, setFirstName] = useState('');
     const[lastName, setLastName] = useState('');
     const[language, setLanguage] = useState('');
@@ -23,18 +26,16 @@ const AddCommentForm = () => {
     // }
 
     return(
-        <div id="add-comment-form">
-            <h3>Input your First Name</h3>
-            <label>
-                First Name:
-                <input type = "text" value={firstName} onChange={(event)=>setFirstName(event.target.value)} />
+        <div id="form-box">
+            <h3>Input your Personal Information</h3>
+            <label class="content">
+                <input placeholder="First Name" type = "text" value={firstName} onChange={(event)=>setFirstName(event.target.value)} />
             </label>
-            <label>
-                Last Name:
-                <input type = "text" value={lastName} onChange={(event)=>setLastName(event.target.value)} />
+            <label class="content">
+                <input placeholder="Last Name" type = "text" value={lastName} onChange={(event)=>setLastName(event.target.value)} />
             </label>
-            <label>
-                Select Language
+            <label class="content">
+                Select Language:
                 <select value={language} onChange={(event)=>setLanguage(event.target.value)} >
                 <option selected value="Arabic">Arabic</option>
                     <option value="Australian English">Australian English</option>
@@ -66,19 +67,17 @@ const AddCommentForm = () => {
                     <option value="Welsh English">Welsh English</option>
                 </select>
             </label>
-            <label>
-                Select Pronouns
+            <label class="content">
+                Select Pronouns:
                 <select value={pronouns} onChange={(event)=>setPronouns(event.target.value)} >
                     <option value="sheHer">She/Her</option>
                     <option value="heHim">He/Him</option>
                     <option value="theyThem">They/Them</option>
-                    <option value="other">Other</option>
                 </select>
 
             </label>
-            <label>
-                Bio: 
-                <textarea rows= "4" cols = "50" value={bio} onChange={(event)=>setBio(event.target.value)}/>
+            <label class="content">
+                <textarea placeholder="A little about me!" rows= "4" cols = "50" value={bio} onChange={(event)=>setBio(event.target.value)}/>
             </label>
             <button>Submit</button>
             {/* <button onClick={()=> addComment()}>Submit</button> */}
@@ -88,4 +87,4 @@ const AddCommentForm = () => {
 
 }
 
-export default AddCommentForm;
+export default Form;
