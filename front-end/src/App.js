@@ -4,6 +4,7 @@ import './App.css';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import Form from './form/Form.js'
+import NavBar from './NavBar'
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
 
   return (
     <div>
+      <NavBar />
       <Form />
     </div>
   );
