@@ -4,7 +4,7 @@ import './NavBar.css';
 
 const NavBar = () => (
     <nav>
-       <img src = {logo} />
+       <img src = {logo} id = "logo"/>
     </nav>
 );
 
