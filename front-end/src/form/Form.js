@@ -68,7 +68,35 @@ const Form = () => {
 
                                 </div>
                                 <div class="form-group form-button">
-                                    <input type="submit" name="signup" id="signup" class="form-submit" value="Submit" />
+                                <button type="submit" value="Create User" 
+                                    onClick={async () => {
+                                        let options = {
+                                            headers: {
+                                              'Content-Type': 'multipart/form-data'
+                                            },
+                                            method: 'POST'
+                                          };
+                                        
+                                          options.body = new FormData();
+                                          const values = {
+                                            "firstName": {firstName},
+                                            "lastName": {lastName},
+                                            "language": {language},
+                                            "pronouns": {pronouns},
+                                            "bio": {bio}
+                                        };
+                                          for (let key in values) {
+                                            options.body.append(key, values[key]);
+                                          }
+                                        
+                                          fetch('http://localhost:5000/createUser', options)
+                                            .then(response => console.log(response))
+                                            .catch(error => console.error(error))
+                                          }
+                                        
+                                }>
+                                </button>
+
                                 </div>
                             </form>
                         </div>
