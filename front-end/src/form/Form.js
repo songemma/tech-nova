@@ -11,7 +11,7 @@ const Form = () => {
     const[language, setLanguage] = useState('');
     const [pronouns, setPronouns] = useState('');
     const[bio, setBio] = useState('');
-
+    console.log({firstName})
     return(
         <div class = "main">
             <section class = "signup">
@@ -71,27 +71,29 @@ const Form = () => {
 
                                 </div>
                                 <div class="form-group form-button">
+                                    
+                                // whenever there's type="submit", need to use event.preventDefault()
+                                // avoid reloading the page
                                 <button type="submit" value="Create User" 
-                                    onClick={async () => {
+                                    onClick={
+                                        // JavaScript starts
+                                        async (event) => {
+                                        event.preventDefault();
                                         let options = {
-                                            headers: {
-                                              'Content-Type': 'multipart/form-data'
+                                            headers:{
+                                                'Content-Type': 'application/json',
                                             },
-                                            method: 'POST'
+                                            method: 'POST',
+                                            body: JSON.stringify({
+                                                "firstName": firstName,
+                                                "lastName": lastName,
+                                                "language": language,
+                                                "pronouns": pronouns,
+                                                "bio": bio
+                                            })
                                           };
                                         
-                                          options.body = new FormData();
-                                          const values = {
-                                            "firstName": {firstName},
-                                            "lastName": {lastName},
-                                            "language": {language},
-                                            "pronouns": {pronouns},
-                                            "bio": {bio}
-                                        };
-                                          for (let key in values) {
-                                            options.body.append(key, values[key]);
-                                          }
-                                        
+                                          
                                           fetch('http://localhost:5000/createUser', options)
                                             .then(response => console.log(response))
                                             .catch(error => console.error(error))
