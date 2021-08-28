@@ -14,7 +14,6 @@ def serve(path):
     return send_from_directory(app.static_folder,'index.html')
 
 
-
 api.add_resource(ApiHandler, '/hello')
 api.add_resource(CreateUser, '/createUser')
 api.add_resource(GetUsers, '/getUsers')
