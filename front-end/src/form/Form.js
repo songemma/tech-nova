@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 // import './Form.css';
 import './style.css';
-import logo from './signup-image.jpeg'
+import logo from './signup-image (1).jpg'
 
 
 const Form = () => {
@@ -11,7 +11,7 @@ const Form = () => {
     const[language, setLanguage] = useState('');
     const [pronouns, setPronouns] = useState('');
     const[bio, setBio] = useState('');
-
+    console.log({firstName})
     return(
         <div class = "main">
             <section class = "signup">
@@ -25,6 +25,9 @@ const Form = () => {
                                 </div>
                                 <div class="form-group">
                                     <input type="text" name="name" id="name" placeholder="Last Name" value={lastName} onChange={(event)=>setLastName(event.target.value)}/>
+                                </div>
+                                <div>
+                                    <p>Choose a dialect for name pronunciation</p>
                                 </div>
                                 <div class="form-group">
                                     <select value={language} name = "name" id="name" onChange={(event)=>setLanguage(event.target.value)} >
@@ -68,7 +71,37 @@ const Form = () => {
 
                                 </div>
                                 <div class="form-group form-button">
-                                    <input type="submit" name="signup" id="signup" class="form-submit" value="Submit" />
+                                    
+                                // whenever there's type="submit", need to use event.preventDefault()
+                                // avoid reloading the page
+                                <button type="submit" value="Create User" 
+                                    onClick={
+                                        // JavaScript starts
+                                        async (event) => {
+                                        event.preventDefault();
+                                        let options = {
+                                            headers:{
+                                                'Content-Type': 'application/json',
+                                            },
+                                            method: 'POST',
+                                            body: JSON.stringify({
+                                                "firstName": firstName,
+                                                "lastName": lastName,
+                                                "language": language,
+                                                "pronouns": pronouns,
+                                                "bio": bio
+                                            })
+                                          };
+                                        
+                                          
+                                          fetch('http://localhost:5000/createUser', options)
+                                            .then(response => console.log(response))
+                                            .catch(error => console.error(error))
+                                          }
+                                        
+                                }>
+                                </button>
+
                                 </div>
                             </form>
                         </div>
