@@ -5,9 +5,16 @@ import boto3
 import subprocess
 from contextlib import closing
 
+ACCESS_KEY = ""
+SECRET_KEY = ""
+
 
 """
-client = boto3.client("polly")
+client = boto3.client(
+    "polly",
+    aws_access_key_id=ACCESS_KEY,
+    aws_secret_access_key=SECRET_KEY
+)
 
 response = client.describe_voices(
     Engine='standard',
@@ -19,7 +26,11 @@ print(response)
 
 
 """
-client = boto3.client("polly")
+client = boto3.client(
+    "polly",
+    aws_access_key_id=ACCESS_KEY,
+    aws_secret_access_key=SECRET_KEY
+)
 response = client.synthesize_speech(
     Engine='standard',
     OutputFormat='mp3',
@@ -39,7 +50,7 @@ subprocess.call(["open", "test_speech.mp3"])
 # integrate w/ React: https://www.powerupcloud.com/text-to-speech-using-amazon-polly-with-react-js-python/
 """
 
-
+"""
 voice_map = {} # {key: value} -> {LanguageName, Id}
 with open("describe_voices.json") as f:
     voices = json.load(f)["Voices"]
@@ -50,4 +61,4 @@ with open("describe_voices.json") as f:
 
 with open("voice_map.json", "w") as f:
     json.dump(voice_map, f, indent=4) 
-    
+"""

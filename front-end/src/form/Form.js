@@ -128,7 +128,6 @@ const Form = () => {
                     <option value="heHim">He/Him</option>
                     <option value="theyThem">They/Them</option>
                 </select>
-
             </label>
             <label class="content">
                 <textarea placeholder="A little about me!" rows= "4" cols = "50" value={bio} onChange={(event)=>setBio(event.target.value)}/>
