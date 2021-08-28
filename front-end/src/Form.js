@@ -36,10 +36,34 @@ const AddCommentForm = () => {
             <label>
                 Select Language
                 <select value={language} onChange={(event)=>setLanguage(event.target.value)} >
-                    <option selected value="english">English</option>
-                    <option value="french">French</option>
-                    <option value="italian">Italian</option>
-                    <option value="spanish">Spanish</option>
+                <option selected value="Arabic">Arabic</option>
+                    <option value="Australian English">Australian English</option>
+                    <option value="Brazilian Portuguese">Brazilian Portuguese</option>
+                    <option value="British English">British English</option>
+                    <option value="Canadian French">Canadian French</option>
+                    <option value="Castilian Spanish">Castilian Spanish</option>
+                    <option value="Chinese Mandarin">Chinese Mandarin</option>
+                    <option value="Danish">Danish</option>
+                    <option value="Dutch">Dutch</option>
+                    <option value="French">French</option>
+                    <option value="German">German</option>
+                    <option value="Hindi or Indian English">Hindi or Indian English</option>
+                    <option value="Icelandic">Icelandic</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Korean">Korean</option>
+                    <option value="Mexican Spanish">Mexican Spanish</option>
+                    <option value="Norwegian">Norwegian</option>
+                    <option value="Polish">Polish</option>
+                    <option value="Portuguese">Portuguese</option>
+                    <option value="Romanian">Romanian</option>
+                    <option value="Russian">Russian</option>
+                    <option value="Swedish">Swedish</option>
+                    <option value="Turkish">Turkish</option>
+                    <option value="US English">US English</option>
+                    <option value="US Spanish">US Spanish</option>
+                    <option value="Welsh">Welsh</option>
+                    <option value="Welsh English">Welsh English</option>
                 </select>
             </label>
             <label>
