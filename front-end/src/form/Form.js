@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 // import './Form.css';
 import './style.css';
-import logo from './signup-image.jpeg'
+import logo from './signup-image (1).jpg'
 
 
 const Form = () => {
@@ -25,6 +25,9 @@ const Form = () => {
                                 </div>
                                 <div class="form-group">
                                     <input type="text" name="name" id="name" placeholder="Last Name" value={lastName} onChange={(event)=>setLastName(event.target.value)}/>
+                                </div>
+                                <div>
+                                    <p>Choose a dialect for name pronunciation</p>
                                 </div>
                                 <div class="form-group">
                                     <select value={language} name = "name" id="name" onChange={(event)=>setLanguage(event.target.value)} >
