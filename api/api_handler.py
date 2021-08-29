@@ -7,8 +7,8 @@ from pathlib import Path
 from contextlib import closing
 from flask_restful import Resource, reqparse
 
-ACCESS_KEY = "AKIAQCO562PCDNEQM4HS"
-SECRET_KEY = "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"
+ACCESS_KEY = "AKIAQCO562PCLDEOLHNZ"
+SECRET_KEY = "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"
 
 cur_dir_path = Path(__file__).resolve().parent
 
@@ -45,8 +45,10 @@ class CreateUser(Resource):
 
     fullName = firstName + lastName
     voiceId = voice_map[language]
-    mp3Path = f"{cur_dir_path}/mp3_files/{fullName}_{language}.mp3"
 
+    mp3FileName = f"{fullName}_{language}.mp3"
+    mp3Path = f"{cur_dir_path.parent}/front-end/public/{mp3FileName}"
+    print(mp3Path)
     if os.path.isfile(mp3Path):
       print("already exists")
       pass
@@ -72,7 +74,7 @@ class CreateUser(Resource):
     
       with open(f"{cur_dir_path}/database.csv", "a", newline="") as f:
           writer = csv.writer(f, delimiter=',')
-          writer.writerow([firstName, lastName, mp3Path, pronouns, bio])
+          writer.writerow([firstName, lastName, mp3FileName, pronouns, bio])
     
     return {"msg": "Success!"}
 
@@ -85,7 +87,7 @@ class GetUsers(Resource):
           users.append({
               "firstName": row[0],
               "lastName": row[1],
-              "mp3Path": row[2],
+              "mp3FileName": row[2],
               "pronouns": row[3],
               "bio": row[4]
           })

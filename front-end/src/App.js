@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import Form from './form/Form.js'
 import NavBar from './NavBar.js'
-// import Speech from './speech_bubbles/Speech.js'
+import Speech from './speech_bubbles/Speech.js'
 
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
     <div>
       <NavBar />
       <Form />
-      {/* <Speech /> */}
+      <Speech />
     </div>
   );
 }

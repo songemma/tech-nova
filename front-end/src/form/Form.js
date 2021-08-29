@@ -11,7 +11,7 @@ const Form = () => {
     const[language, setLanguage] = useState('');
     const [pronouns, setPronouns] = useState('');
     const[bio, setBio] = useState('');
-    console.log({firstName})
+
     return(
         <div class = "main">
             <section class = "signup">
