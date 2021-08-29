@@ -22,11 +22,10 @@ function App() {
   }, [])
 
   return (
-    <div>
+    <div class="something-different">
       <NavBar />
       <Form />
       <Speech />
-      <Footer />
     </div>
   );
 }
