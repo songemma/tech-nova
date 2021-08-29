@@ -25,3 +25,11 @@
     display: inline-block;
     width: 25%;
 }
+
+#plane
+{
+    padding: 0;
+    margin: 0;
+    width: 30%;
+    display: inline-block;
+}
