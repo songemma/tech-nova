@@ -18,7 +18,7 @@ const Form = () => {
                 <div class = "container">
                     <div class = "signup-content">
                         <div class = "signup-form">
-                            <h2 class="form-title">Input your Personal Info</h2>
+                            <h2 class="form-title">Input Your Personal Info</h2>
                             <form method="POST" class="register-form" id="register-form">
                                 <div class="form-group">
                                     <input type="text" name="name" id="name" placeholder="First Name" value={firstName} onChange={(event)=>setFirstName(event.target.value)}/>

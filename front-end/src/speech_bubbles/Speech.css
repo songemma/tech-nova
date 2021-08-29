@@ -1,0 +1,27 @@
+*
+{
+    margin: 20px;
+    text-align: center;
+}
+
+#firstName, #lastName
+{
+    display: inline;
+    padding: 0;
+}
+
+#nameAudio
+{
+    margin: 0;
+    padding: 0;
+}
+
+.comment
+{
+    margin-top: 50px;
+    padding: 20px;
+    border-radius: 1em;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: inline-block;
+    width: 25%;
+}
