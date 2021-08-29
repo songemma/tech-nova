@@ -5,6 +5,7 @@ import NavBar from '../NavBar';
 import Form from '../form/Form';
 import ReactAudioPlayer from 'react-audio-player';
 import './Speech.css';
+import plane from './Airplane.PNG';
 // 
 
 
@@ -29,8 +30,10 @@ const Speech = () =>  {
     
     return (
         <div>
-    
+        <img src = {plane} alt = "plane" id = "plane"/>
+        <h1 id = "meet">Meet your new friends!</h1>
             {getMessage.map((data,key) =>(
+                
                 <div className = "comment" key = {key}>
                     <h4>{data.firstName} {data.lastName}</h4>
                     <div>
