@@ -26,7 +26,7 @@ function App() {
       <NavBar />
       <Form />
       <Speech />
-      <Footer 
+      <Footer />
     </div>
   );
 }
