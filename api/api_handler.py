@@ -7,8 +7,8 @@ from pathlib import Path
 from contextlib import closing
 from flask_restful import Resource, reqparse
 
-ACCESS_KEY = "AKIAQCO562PCLDEOLHNZ"
-SECRET_KEY = "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"
+ACCESS_KEY = "AKIAQCO562PCCJYSUMEW"
+SECRET_KEY = "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"
 
 cur_dir_path = Path(__file__).resolve().parent
 

@@ -239,7 +239,7 @@ textarea {
   color: inherit;
   border-color: #999;
   padding: 1em;
-  width: 90%;
+  width: 80%;
 }
 input {
   width: 100%;
@@ -546,7 +546,8 @@ select {
   border-color: #999;
   padding: 1em;
   margin: 0;
-  width: 100%;
+  margin-left: 1.2em;
+  width: 90%;
   font-family: inherit;
   font-size: inherit;
   cursor: inherit;
