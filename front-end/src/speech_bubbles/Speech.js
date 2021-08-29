@@ -5,11 +5,8 @@ import NavBar from '../NavBar';
 import Form from '../form/Form';
 import ReactAudioPlayer from 'react-audio-player';
 import './Speech.css';
-<<<<<<< HEAD
-=======
 import plane from './Airplane.PNG';
 // 
->>>>>>> 14980d87dbfa17097c1efeee75f069098554eb42
 
 
 
